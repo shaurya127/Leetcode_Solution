@@ -35,8 +35,7 @@ vector<int> findSubarray(int a[], int n) {
        max_sum=curr_sum;
        res=ans;
     }
-    ans.clear();
-    curr_sum=0;
+    
     if(res.empty())
         res.push_back(-1);
    return res;
