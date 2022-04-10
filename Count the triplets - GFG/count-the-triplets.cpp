@@ -11,25 +11,25 @@ public:
 	
 	int countTriplet(int arr[], int n)
 	{
+	    int count=0;
 	    sort(arr,arr+n);
-	    int cnt=0;
-	    for(int i=0;i<n;i++){
-	        int low=0,high=i-1;
-	        while(low<high){
-	            if(arr[i]==arr[low]+arr[high]){
-	                low++;
-	                high--;
-	                cnt++;
+	    for(int i=n-1;i>=2;i--){
+	        int l=0;
+	        int h=i-1;
+	        while(l<h){
+	            if(arr[l]+arr[h]==arr[i]){
+	                count++;
+	                l++;h--;
 	            }
-	            else if(arr[i]<arr[low]+arr[high]){
-	                high--;
+	            else if(arr[l]+arr[h]<arr[i]){
+	                l++;
 	            }
 	            else{
-	                low++;
+	                h--;
 	            }
 	        }
 	    }
-	    return cnt;
+	    return count;
 	}
 };
 
