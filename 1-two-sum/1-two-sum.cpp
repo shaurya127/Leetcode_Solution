@@ -8,9 +8,9 @@ public:
             if(mp.find(x)!=mp.end()){
                 return {i,mp[x]};
             }
-            else{
+            
                 mp[nums[i]]=i;
-            }
+            
         }
         return {};
     }
